@@ -1,0 +1,38 @@
+<div class="card-wrap {{data?.name}}">
+    <div class="card-title">{{data?.title}}</div>
+    <div class="card-content">
+        <div class="card-overview">
+            <span class="value">{{data?.value}}</span>
+            <span *ngIf="data?.extraValue" class="extra-value">{{data?.extraValue}}</span>
+            <span *ngIf="data?.isTemp then celsius"></span>
+        </div>
+        <div *ngIf="data?.status" class="card-status">
+            <span class="status">{{data?.status}}</span>
+        </div>
+        <div class="card-detail">
+            <ng-container *ngIf="!data?.isMaxMin else maxMin">
+                <div class="detail-info">
+                    <div class="detail-info-title">{{data?.infoTitle}}</div>
+                    <div class="detail-info-value">{{data?.infoValue}}</div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<ng-template #maxMin>
+    <div class="detail-max-min">
+        <div class="detail-max">
+            <span class="detail-value">{{data?.maxValue}}</span>
+            <ng-container *ngIf="data?.isTemp then celsius"></ng-container>
+        </div>
+        <div class="detail-min">
+            <span class="detail-value">{{data?.minValue}}</span>
+            <ng-container *ngIf="data?.isTemp then celsius"></ng-container>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #celsius>
+    <span class="celsius">&#8451;</span>
+</ng-template>

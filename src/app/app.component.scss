@@ -1,0 +1,17 @@
+.card-container {
+    display: flex;
+    gap: 24px;
+    padding: 0 40px 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logo-wrap {
+    width: max-content;
+    margin: auto;
+
+    .logo {
+        width: 160px;
+        padding: 50px;
+    }
+}

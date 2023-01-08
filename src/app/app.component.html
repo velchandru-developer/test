@@ -1,0 +1,8 @@
+<div class="logo-wrap">
+  <img class="logo" src="/assets/svg/logo.svg" alt="">
+</div>
+<div class="card-container">
+  <ng-container *ngFor="let cardData of dashboardData">
+    <app-card [data]="cardData"></app-card>
+  </ng-container>
+</div>
